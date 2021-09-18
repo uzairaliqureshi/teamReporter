@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>teams dashboard</title>
+</head>
+
+<body>
+    <div id="teams" class="container teams">
+        <fieldset class="fieldset">
+            <legend class="legend">
+                <h2>Teams</h2>
+            </legend>
+            <div class="heading">
+                Teams you own
+            </div>
+            <div id="teams-own">
+            </div>
+            <!-- below div is a child of teams-own div -->
+            <!-- <div class="team-detail">
+                <div class="team-detail-container">
+                    <p>Architects</p>
+                    <p class="members"><span class="members__head">Members: </span>Haris,Arshad, & 1 other</p>
+                </div>
+            </div> -->
+            <div id="teams-part-of">
+                <div class="heading">
+                    Teams you're part of
+                </div>
+                <div id="teams-part-of">
+                </div>
+            </div>
+            <a href="index.html" class="btn btn--logout">&#8592;</a>
+            <a href="#popup" class="btn btn--add">&#10011;</a>
+        </fieldset>
+        <div class="popup" id="popup">
+            <div class="create-team">
+                <div class="heading">
+                    Create new Team
+                </div>
+                <input id="teamNameInput" type="text" class="input" placeholder="Team Name" required autocomplete="off">
+                <select class="categories" name="categories" id="categories">
+                    <option disabled selected hidden>category</option>
+                    <option value="Front-End Developer">Front-End Developer</option>
+                    <option value="Back-End Developer">Back-End Developer</option>
+                    <option value="Full-Stack Developer">Full-stack Developer</option>
+                </select>
+                <input id="teamMembersInput" class="input" type="email"
+                    placeholder="Members (type valid emails with space)" autocomplete="off" required>
+                <div class="btn-div">
+                    <a href="#teams" class="btn btn--green" id="create">create</a>
+                    <a href="#teams" class="btn btn--cancel">cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/teams.js"></script>
+</body>
+
+</html>

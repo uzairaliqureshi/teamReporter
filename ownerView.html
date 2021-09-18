@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Report & setting</title>
+</head>
+
+<body>
+    <div id="settingAndReport" class="container settingAndReport">
+        <fieldset class="fieldset">
+            <legend class="legend">
+                <h2>Team/ Owner view</h2>
+            </legend>
+            <div class="teamView-btn">
+                <a href="teams.html" class="btn btn--back">&larr;</a>
+                <a class="btn--Rep borderBottom">Reports</a>
+                <a class="btn--Set">Settings</a>
+            </div>
+            <div class="reportDiv">
+                <div class="dateMembersSelDiv">
+                    <select class="membersSelectBox" name="membersSelectBox" id="membersSelectBox">
+                        <option disabled selected hidden>select members</option>
+                        <option value="Front-End Developer">All members</option>
+                        <option value="Back-End Developer">Haris</option>
+                        <option value="Full-Stack Developer">Arshad</option>
+                    </select>
+                    <input type="date" class="dateSelInp" data-date-inline-picker="true" />
+                </div>
+                <div class="interrogation">
+                    <div class="quesAnsDiv">
+                        <div class="namDate">
+                            Haris:16 Aug
+                        </div>
+                        <div class="quesAns">
+                            <div class="ques">Q.what did you do today</div>
+                            <div class="ans">A. Nothing</div>
+                            <div class="ques">Q.what did you do today</div>
+                            <div class="ans">A. Nothing</div>
+                            <div class="ques">Q.what did you do today</div>
+                            <div class="ans">A. Nothing</div>
+                        </div>
+                    </div>
+                    <div class="quesAnsDiv">
+                        <div class="namDate">
+                            Haris:16 Aug
+                        </div>
+                        <div class="quesAns">
+                            <div class="ques">Q.what did you do today</div>
+                            <div class="ans">A. Nothing</div>
+                            <div class="ques">Q.what did you do today</div>
+                            <div class="ans">A. Nothing</div>
+                            <div class="ques">Q.what did you do today</div>
+                            <div class="ans">A. Nothing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings hide">
+                <div class="askQuesDiv">
+                    <div class="">
+                        Questions:
+                    </div>
+                    <div class="quesAns">
+                        <input type="text" class="input" id="" placeholder="ask questions" autocomplete="off" required>
+                        <input type="text" class="input" id="" placeholder="ask questions" autocomplete="off" required>
+                        <input type="text" class="input" id="" placeholder="ask questions" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="reminder">
+                    <div class="">
+                        Reminder Time:
+                    </div>
+                    <div class="timeAndCheck">
+                        <div class="">
+                            <input type="time" class="timeSelInp" id="" value="20:00" required>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" id="exclude" class="" required>
+                            <label for="exclude" class="exclude">Exclude WeeKends</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="membersDiv">
+                    <div class="">
+                        Members:
+                    </div>
+                    <div class="emailsDiv">
+                        <div class="emailDiv">
+                        </div>
+                    </div>
+                    <div class="addMember">
+                        <input type="text" class="input" id="addMemberInput"
+                            placeholder="add members (type valid emails with space)" autocomplete="off" required>
+                        <a class="btn btn--green" id="addMemberBtn">Add</a>
+                    </div>
+                </div>
+                <div class="buttonsDiv">
+                    <a href="" class="save-btn">Save changes</a>
+                    <a href="teams.html" class="cancel-btn">&nbsp;&nbsp;&nbsp; Cancel &nbsp;&nbsp;&nbsp;</a>
+                    <a href="teams.html" class="del-btn">Delete teams</a>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <script type="module" src="./js/ownerView.js"></script>
+</body>
+
+</html>

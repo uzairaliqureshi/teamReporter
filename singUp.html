@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font family -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"> -->
+    <!-- css style sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>signUp</title>
+</head>
+
+<body>
+    <div id="signUp" class="container">
+        <fieldset class="fieldset">
+            <legend class="legend">
+                <h2>SignUp</h2>
+            </legend>
+            <form action="" class="login__form">
+                <div class="form__group">
+                    <label for="signUpName" class="input__label">Full name*</label>
+                    <input type="text" class="input" id="signUpName" placeholder="enter name" required
+                        autocomplete="off">
+                </div>
+                <div class="form__group">
+                    <label class="input__label"
+                        for="signUpEmail">Email*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input class="input" type="email" placeholder="enter email" id="signUpEmail" autocomplete="off"
+                        required>
+                </div>
+                <div class="form__group">
+                    <label class="input__label" for="signUpPassword">Password*</label>
+                    <input class="input" type="password" placeholder="enter password" id="signUpPassword"
+                        autocomplete="off" required>
+                </div>
+                <a href="" id="signUpNewUser" class="btn btn--green">SignUp</a>
+                <a href="index.html" class="gotoLogin btn btn--white">Login</a>
+            </form>
+        </fieldset>
+    </div>
+    <script type="module" src="./js/signUp.js"></script>
+</body>
+
+</html>

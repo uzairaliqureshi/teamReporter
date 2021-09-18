@@ -1,1 +1,41 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">    <link rel="stylesheet" href="css/style.css">    <title>SignUp</title></head><body onload="locationCheck()">    <form onsubmit="return false" class="form">        <fieldset class="form__fieldset">            <legend class="form__legend">                <h1 class="form__h3">SignUp</h1>            </legend>            <div class="form__div form-fields">                <h3 class="form__h3"><label for="userName">Full Name</label></h3>                <input class="form__input" type="text" placeholder="Enter Your Name" id="userName" required                    autocomplete="off">                <h3 class="form__h3"><label for="email">Email</label></h3>                <input class="form__input" type="text" placeholder="Enter Your Email" id="email" required                    autocomplete="off">                <h3 class="form__h3"><label for="password">Password</label></h3>                <input class="form__input" type="password" placeholder="Enter Your Password" id="password" required                    autocomplete="off">                <div class="input-btn-div">                    <input class="input-btn btn" onclick="onSignup()" id="regBtn" type="submit" value="Signup">                </div>            </div>        </fieldset>    </form>    <div class="acc"><a class="btn" href="login.html">Login</a></div></body><script src="javaScript/app.js"></script></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- css style sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <!-- login page -->
+    <div id="login" class="container">
+        <fieldset class="fieldset">
+            <legend class="legend">
+                <h2>Login</h2>
+            </legend>
+            <form class="login__form">
+                <div class="form__group">
+                    <label class="input__label" for="loginEmail">Email*</label>
+                    <input class="input" type="email" placeholder="enter email" id="loginEmail" autocomplete="off"
+                        required>
+                </div>
+                <div class="form__group">
+                    <label class="input__label" for="loginPassword">Password*</label>
+                    <input class="input" type="password" placeholder="enter password" id="loginPassword"
+                        autocomplete="off" required>
+                </div>
+                <button id="loginUser" class="btn btn--green">Login</button>
+                <a href="singUp.html" class="gotoSingUp btn btn--white">SignUp</a>
+            </form>
+        </fieldset>
+    </div>
+    <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

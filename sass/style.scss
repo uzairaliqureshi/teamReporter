@@ -1,1 +1,536 @@
-$color-primary: #55c57a;$color-white: #fff;$color-black: #000;*,*::after,*::before {      margin: 0;      padding: 0;      box-sizing: inherit;}html {      font-size: 62.5%;}body {      box-sizing: border-box;      padding: 3rem;      font-size: 2rem;      font-family: "Lato", sans-serif;      font-weight: 400;      line-height: 1.7;      color: #333;}.q{      font-size: 2rem;      background-color: white;      text-transform: uppercase;      border-bottom: 1px solid $color-primary;      color: $color-primary;}.form {      &__fieldset {        padding: 3rem;  }  &__input {        font-family: inherit;        font-size: 1.5rem;        color: inherit;        padding: 1.5rem 2rem;        border-radius: 2px;        background-color: rgba(#fff, 0.5);        width: 90%;        margin: 0.5rem;  }}.btn {      &,      &:link,      &:visited {        margin: 1rem;        background-color: $color-primary;        color: $color-white;        text-transform: uppercase;        text-decoration: none;        padding: 1.5rem 4rem;        display: inline-block;        font-size: 1.6rem;        transition: all 0.3s;        border: none;        cursor: pointer;  }  &:hover {        transform: translateY(-3px);        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);  }  &:active,  &:focus {        outline: none;        transform: translateY(-1px);        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);  }}.btn-text {      &:link,      &:visited {        color: $color-primary;        border-bottom: 1px solid $color-primary;        font-size: 1.6rem;        display: inline-block;        text-decoration: none;        padding: 1.5rem 4rem;        transition: all 0.3s;        cursor: pointer;        margin: 1rem;        text-transform: uppercase;  }  &:hover {        background-color: $color-primary;        color: $color-white;        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);        transform: translateY(-2px);  }  &:active {        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);        transform: translateY(0);  }}.navbar {      background-color: $color-white;}.bg-azure {      position: relative;}.btn-add {      position: absolute;      top: 12rem;      right: 4rem;}
+// variables
+:root {
+  // Colors
+  --color-pink: #eb2f64;
+  --color-pink-light: #ff3366;
+  --color-pink-dark: #ba265d;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-3: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-1: #999;
+
+  --color-green: #55c57a;
+  --color-green-light: #7ed56f;
+  --color-green-dark: #28b485;
+
+  --color-yellow-light: #ffb900;
+  --color-yellow-dark: #ff7730;
+
+  --color-blue-light: #2998ff;
+  --color-blue-dark: #5643fa;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  //   shadow
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
+  --line: 1px solid var(--color-grey-light-2);
+
+  // font
+  --default-font-size: 1.6rem;
+
+  // grid
+  --grid-width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-vertical-small: 6rem;
+  --gutter-horizontal: 6rem;
+}
+
+// media query
+@mixin mediaQuery($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (min-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } // 1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } // 1800px
+  }
+  @if $breakpoint == except-phone {
+    @media (min-width: 37.5em) {
+      @content;
+    } // 1800px
+  }
+}
+
+// fields
+@mixin fields {
+  font-size: 2rem;
+  padding: 1rem;
+  border: 2px solid;
+}
+
+// for centering content
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// for btn add and logOut btn
+@mixin addAndLogOut {
+  color: black;
+  padding: 1.2rem 2rem;
+  border-radius: 100px;
+  font-size: 2rem;
+  position: fixed;
+  right: 6%;
+}
+
+// for selectBox
+@mixin selectBoxStyle {
+  border: none;
+  background-color: #fff;
+  transition: all 0.2s;
+  border: 1.4px solid;
+  outline: none;
+}
+
+// hover and focus for buttons
+@mixin hoverAndFocus {
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+}
+// base settings
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--color-grey-dark-3);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--color-white);
+}
+
+// login & signUp page
+.container {
+  margin: 1rem auto;
+}
+
+.login__form {
+  margin: 5rem 0;
+  min-height: 30rem;
+  @include flexCenter();
+
+  .form__group {
+    width: 90%;
+  }
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: black;
+  padding: 1.5rem 2rem;
+  background-color: rgba(#fff, 0.5);
+  width: 90%;
+  margin: 0.7rem 1.5rem 3rem;
+  border: none;
+  border-bottom: 2px solid var(--color-grey-dark-1);
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--color-green);
+  }
+
+  &:focus:invalid {
+    border-bottom: 2px solid var(--color-yellow-dark);
+  }
+
+  &::-webkit-input-placeholder {
+    color: var(--color-grey-dark-2);
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    margin-left: 2.4%;
+    color: var(--color-grey-dark-3);
+  }
+}
+
+.fieldset {
+  @include fields;
+  margin: 0 5%;
+  position: fixed;
+  width: 90%;
+  height: 95%;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .legend {
+    margin-left: 2%;
+  }
+}
+
+// buttons
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    display: inline-block;
+    transition: all 0.2s;
+
+    //Change for the <button> element
+    cursor: pointer;
+  }
+
+  @include hoverAndFocus();
+
+  &--white {
+    font-size: 1.4rem;
+    margin: 0.7rem;
+    background-color: var(--color-white);
+    color: var(--color-grey-dark-1);
+
+    &:hover {
+      color: var(--color-black);
+    }
+  }
+
+  &--green {
+    border: none;
+    font-size: 1.4rem;
+    margin: 0.7rem;
+    background-color: var(--color-green);
+    color: var(--color-white);
+  }
+
+  &--cancel {
+    font-size: 1.4rem;
+    margin: 0.7rem;
+    background-color: rgba(255, 0, 0, 0.863);
+    color: var(--color-white);
+  }
+}
+
+.save-btn,
+.cancel-btn,
+.del-btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 0.7rem 0.9rem;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  @include hoverAndFocus();
+}
+.save-btn {
+  background-color: var(--color-green);
+  color: #fff;
+}
+.cancel-btn {
+  background-color: var(--color-grey-light-4);
+  color: #000;
+}
+.del-btn {
+  background-color: rgba(255, 0, 0, 0.863);
+  color: #fff;
+}
+
+.btn--add {
+  &,
+  &:link,
+  &:visited {
+    background-color: #55c57ab4;
+    bottom: 4.5rem;
+    @include addAndLogOut();
+  }
+}
+
+.btn--logout {
+  &,
+  &:link,
+  &:visited {
+    background-color: rgba(255, 0, 0, 0.562);
+    bottom: 11rem;
+    @include addAndLogOut();
+  }
+}
+
+.btn--Rep,
+.btn--Set {
+  &,
+  &:link,
+  &:visited {
+    color: var(--color-black);
+    padding: 1.2rem 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+}
+
+.btn--back {
+  font-size: 1.5rem;
+  margin: 0.7rem;
+  color: var(--color-grey-dark-3);
+
+  &:hover {
+    box-shadow: none;
+    color: var(--color-black);
+  }
+}
+
+.btn-cross {
+  border-radius: 100px;
+}
+
+// teams dashboard
+
+.heading {
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.team-detail {
+  outline: 1.5px solid;
+  padding: 2rem;
+  margin: 3% 8%;
+}
+.partOfTeam-detail,
+.ownTeam-detail {
+  cursor: pointer;
+}
+
+.members {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+
+  &__head {
+    font-weight: 700;
+  }
+}
+
+// popup for team creation
+.popup {
+  flex-direction: column;
+  @include flexCenter();
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.2s;
+  opacity: 0;
+  visibility: hidden;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.categories {
+  width: 90%;
+  height: 12%;
+  margin: 0.9rem 0;
+  padding: 1rem 0.5rem;
+  @include selectBoxStyle();
+}
+
+.create-team {
+  border: 2px solid;
+  background-color: #fff;
+  @include flexCenter();
+  height: 55%;
+  width: 50%;
+
+  @include mediaQuery(phone) {
+    width: 80%;
+  }
+}
+
+// team settings and reports page
+
+.teamView-btn {
+  border-bottom: var(--line);
+  border-top: var(--line);
+}
+
+.borderBottom {
+  border-bottom: 3px solid red;
+}
+
+.wrongInfoMessage {
+  flex-direction: column;
+  @include flexCenter();
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.2s;
+
+  &:target {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.dateSelInp,
+.timeSelInp,
+.membersSelectBox {
+  @include selectBoxStyle();
+  width: 13.6rem;
+  height: 6%;
+  margin: 2.5rem 2.5rem 0;
+  padding: 0.5rem 0.2rem;
+}
+
+.dateMembersSelDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quesAnsDiv {
+  font-size: 1.6rem;
+  margin: 2.5rem;
+}
+
+.quesAns {
+  margin: 0 5rem;
+}
+
+.ques,
+.ans {
+  margin: 0.7rem 0;
+}
+
+.interrogation {
+  @include mediaQuery(tab-port) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.reminder,
+.askQuesDiv,
+.membersDiv,
+.buttonsDiv {
+  margin: 2.5rem;
+}
+
+.quesAns {
+  margin: 0 5rem;
+}
+
+.timeAndCheck {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.exclude {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.emailDiv {
+  font-size: 1.4rem;
+  font-weight: 900;
+  background-color: var(--color-grey-light-4);
+  padding-left: 2rem;
+  border-radius: 2rem;
+  margin: 1rem;
+}
+
+.emailsDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.addMember {
+  display: flex;
+  align-items: baseline;
+}
+
+.buttonsDiv {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.6rem;
+}
+
+.headAndBackBtnDiv {
+  display: flex;
+  align-items: baseline;
+}
+
+.fillingHead {
+  font-weight: 400;
+  @include mediaQuery(phone) {
+    margin: 2rem;
+  }
+  @include mediaQuery(except-phone) {
+    margin: 4rem 3rem;
+  }
+  &__sub {
+    font-weight: 900;
+    border-bottom: 4px solid;
+  }
+}
+
+.inputsDiv {
+  margin: 10% 15%;
+}
