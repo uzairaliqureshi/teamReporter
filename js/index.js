@@ -10,15 +10,18 @@ const loginPassword = document.querySelector('#loginPassword');
 const checkingValues = function (e) {
     e.preventDefault();
     const users = getData('users');
-    const userEmail = users.filter(obj => obj.signUpEmail === loginEmail.value);
-    const userPassword = users.filter(obj => obj.signUpPassword === loginPassword.value);
-    if (userEmail.length, userPassword.length) {
-        window.location.href = 'teams.html';
-        saveData('currentUser', loginEmail.value);
+    if (users) {
+        const userEmail = users.filter(obj => obj.signUpEmail === loginEmail.value);
+        const userPassword = users.filter(obj => obj.signUpPassword === loginPassword.value);
+        if (userEmail.length, userPassword.length) {
+            window.location.href = 'teams.html';
+            saveData('currentUser', loginEmail.value);
+        } else {
+            displayWrongDetailMes('login');
+        }
     } else {
         displayWrongDetailMes('login');
     }
-    // userEmail.length, userPassword.length ? window.location.href = 'teams.html' : console.log('not');
 };
 
 eventListener('#loginUser', checkingValues);
