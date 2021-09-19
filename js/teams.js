@@ -61,7 +61,7 @@ const createMembersDiv = function () {
             team.innerHTML =
                 `<div class="partOfTeam-detail">
                <p>${obj.category}</p>
-               <p class="members"><span class="members__head">Members: </span>${obj.teamMembers}</p>
+               <p class="members"><span class="members__head">Members: </span>${obj.teamMembers.replace(currentUser, 'You')}</p>
              </div>`;
             teamsPartOf.insertAdjacentElement('beforeend', team);
         });

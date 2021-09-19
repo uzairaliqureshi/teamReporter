@@ -62,6 +62,7 @@ createMembersList();
 
 function addMembers() {
     const booleanValue = checkInputEmails(addMemberInput);
+    console.log(booleanValue);
     if (booleanValue) {
         membersSet.map(email => {
             const memBers = document.createElement('div');

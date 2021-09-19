@@ -50,7 +50,7 @@ const checkInputEmails = function (input) {
     });
   });
   teamMembers = membersSet.join();
-  const afterCheckingEmails = arr.length === membersSet.length ? true : false;
+  const afterCheckingEmails = arr.length === membersSet.length && arr.length > 0 ? true : false;
   return afterCheckingEmails;
 };
 
