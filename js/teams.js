@@ -9,7 +9,6 @@ const selectBox = document.getElementById('categories');
 const teamMembersInput = document.getElementById('teamMembersInput');
 const teamsOwn = document.getElementById('teams-own');
 const teamsPartOf = document.getElementById('teams-part-of');
-const popup = document.querySelector('.popup');
 
 const clearInputs = () => {
     teamNameInput.value = '';
