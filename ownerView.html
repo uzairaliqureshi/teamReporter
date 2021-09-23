@@ -16,7 +16,7 @@
                 <h2>Team/ Owner view</h2>
             </legend>
             <div class="teamView-btn">
-                <a href="teams.html" class="btn btn--back">&larr;</a>
+                <a href="teams.html" class="btn--back">&larr;</a>
                 <a class="btn--Rep borderBottom">Reports</a>
                 <a class="btn--Set">Settings</a>
             </div>
@@ -24,39 +24,11 @@
                 <div class="dateMembersSelDiv">
                     <select class="membersSelectBox" name="membersSelectBox" id="membersSelectBox">
                         <option disabled selected hidden>select members</option>
-                        <option value="Front-End Developer">All members</option>
-                        <option value="Back-End Developer">Haris</option>
-                        <option value="Full-Stack Developer">Arshad</option>
+                        <option value="select all">select all</option>
                     </select>
                     <input type="date" class="dateSelInp" data-date-inline-picker="true" />
                 </div>
                 <div class="interrogation">
-                    <div class="quesAnsDiv">
-                        <div class="namDate">
-                            Haris:16 Aug
-                        </div>
-                        <div class="quesAns">
-                            <div class="ques">Q.what did you do today</div>
-                            <div class="ans">A. Nothing</div>
-                            <div class="ques">Q.what did you do today</div>
-                            <div class="ans">A. Nothing</div>
-                            <div class="ques">Q.what did you do today</div>
-                            <div class="ans">A. Nothing</div>
-                        </div>
-                    </div>
-                    <div class="quesAnsDiv">
-                        <div class="namDate">
-                            Haris:16 Aug
-                        </div>
-                        <div class="quesAns">
-                            <div class="ques">Q.what did you do today</div>
-                            <div class="ans">A. Nothing</div>
-                            <div class="ques">Q.what did you do today</div>
-                            <div class="ans">A. Nothing</div>
-                            <div class="ques">Q.what did you do today</div>
-                            <div class="ans">A. Nothing</div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="settings hide">
@@ -65,9 +37,12 @@
                         Questions:
                     </div>
                     <div class="quesAns">
-                        <input type="text" class="input" id="" placeholder="ask questions" autocomplete="off" required>
-                        <input type="text" class="input" id="" placeholder="ask questions" autocomplete="off" required>
-                        <input type="text" class="input" id="" placeholder="ask questions" autocomplete="off" required>
+                        <input type="text" class="input" id="questionInput" placeholder="ask questions"
+                            autocomplete="off" required>
+                        <input type="text" class="input" id="questionInput" placeholder="ask questions"
+                            autocomplete="off" required>
+                        <input type="text" class="input" id="questionInput" placeholder="ask questions"
+                            autocomplete="off" required>
                     </div>
                 </div>
                 <div class="reminder">
@@ -99,7 +74,7 @@
                     </div>
                 </div>
                 <div class="buttonsDiv">
-                    <a href="" class="save-btn">Save changes</a>
+                    <a href="teams.html" id="saveChanges" class="save-btn">Save changes</a>
                     <a href="teams.html" class="cancel-btn">Cancel</a>
                     <a href="teams.html" class="del-btn">Delete teams</a>
                 </div>

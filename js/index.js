@@ -13,7 +13,7 @@ const checkingValues = function (e) {
     if (users) {
         const userEmail = users.filter(obj => obj.signUpEmail === loginEmail.value);
         const userPassword = users.filter(obj => obj.signUpPassword === loginPassword.value);
-        if (userEmail.length, userPassword.length) {
+        if (userEmail.length && userPassword.length) {
             window.location.href = 'teams.html';
             saveData('currentUser', loginEmail.value);
         } else {
