@@ -8,15 +8,18 @@ const signUpPassword = document.querySelector('#signUpPassword');
 
 
 // for getting data from input fields and save into local storage
+let existingUser;
 function saveLocalStorageData() {
     const objOfUser = {};
     objOfUser.signUpName = signUpName.value;
     objOfUser.signUpEmail = signUpEmail.value;
     objOfUser.signUpPassword = signUpPassword.value;
     const users = getData('users');
+    console.log(users);
     if (users) {
-        users.push(objOfUser);
-        saveData('users', users);
+        existingUser = users.map(obj => obj.signUpEmail === signUpEmail.value);
+        console.log(existingUser);
+        !existingUser[0] && users.push(objOfUser) && saveData('users', users);
     } else {
         saveData('users', [objOfUser]);
     }
@@ -27,11 +30,15 @@ document.querySelector('#signUpNewUser').addEventListener('click', function (e) 
     e.preventDefault();
     if (signUpName.value !== '' && signUpEmail.value !== '' && signUpPassword.value !== '') {
         saveLocalStorageData();
-        signUpName.value = '';
-        signUpEmail.value = '';
-        signUpPassword.value = '';
-        window.location.href = 'index.html';
+        if (!existingUser[0]) {
+            signUpName.value = '';
+            signUpEmail.value = '';
+            signUpPassword.value = '';
+            window.location.href = 'index.html';
+        } else {
+            displayWrongDetailMes('signUp', 'That email is taken. Try another');
+        }
     } else {
-        displayWrongDetailMes('signUp');
+        displayWrongDetailMes('signUp', 'please fill all inputs');
     }
 });

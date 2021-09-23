@@ -62,7 +62,6 @@ createMembersList();
 
 function addMembers() {
     const booleanValue = checkInputEmails(addMemberInput);
-    console.log(booleanValue);
     if (booleanValue) {
         membersSet.map(email => {
             const memBers = document.createElement('div');
@@ -80,7 +79,7 @@ function addMembers() {
         teamsData[currentTeam].teamMembers = newEmailsStr;
         saveData(currentUser + 'adminOf', teamsData);
     } else {
-        displayWrongDetailMes('settingAndReport');
+        displayWrongDetailMes('settingAndReport', 'email is not exist');
         addMemberInput.value = '';
     }
 }

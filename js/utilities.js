@@ -14,14 +14,14 @@ const getData = (key) =>
 const currentUser = getData('currentUser');
 
 // for display wrongInfo message
-const displayWrongDetailMes = function (id) {
+const displayWrongDetailMes = function (id, mes) {
   const container = document.getElementById(id);
   const wrongInfoDiv = document.createElement('div');
   wrongInfoDiv.classList.add('wrongInfoMessage');
   wrongInfoDiv.innerHTML =
     `<div class="create-team">
           <div class="heading">
-            please fill correct details
+            ${mes}
           </div>
           <div class="btn-div">
              <a id="goBack" class="btn btn--green">OK</a>

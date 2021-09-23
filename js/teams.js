@@ -99,7 +99,8 @@ const creatTeam = function () {
     } else {
         // for display wrongInfo message
         clearInputs();
-        displayWrongDetailMes('teams');
+        if (!category) displayWrongDetailMes('teams', 'please select category');
+        else displayWrongDetailMes('teams', 'type correct email');
     }
 };
 eventListener('#create', creatTeam);

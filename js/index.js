@@ -17,10 +17,10 @@ const checkingValues = function (e) {
             window.location.href = 'teams.html';
             saveData('currentUser', loginEmail.value);
         } else {
-            displayWrongDetailMes('login');
+            displayWrongDetailMes('login', 'account is not exit');
         }
     } else {
-        displayWrongDetailMes('login');
+        displayWrongDetailMes('login', 'account is not exit');
     }
 };
 
